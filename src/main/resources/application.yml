@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ntfx_movies?useSSL=false
+    username: root
+    password: 058821
+  jpa:
+    hibernate.ddl-auto: none
+    generate-ddl: true
+    show-sql: true
