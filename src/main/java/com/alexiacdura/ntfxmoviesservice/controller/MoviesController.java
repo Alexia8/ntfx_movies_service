@@ -39,6 +39,20 @@ public class MoviesController {
         return moviesRepository.findAll();
     }
 
+
+    @GetMapping(value = "/get/{name}")
+public Optional<Movies> getMovieByName(@PathVariable("name") final String name) {
+    System.out.println(name);
+    Movies result = null;
+    for (Movies m : moviesRepository.findAll()) {
+        if(m.getTitle().equals(name)) {
+            result = m;
+            break;
+        }
+    }
+    return Optional.ofNullable(result);
+}
+
     /**
      * Return method that returns a specific movie from db
      *
